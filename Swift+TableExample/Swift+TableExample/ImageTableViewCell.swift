@@ -12,6 +12,10 @@ class ImageTableViewCell: UITableViewCell
 {
     @IBOutlet var img_view : UIImageView!
     
+    // Las constantes se declaran como let
+    // Si necesitamos usar un let/var en un metodo de clase, necesitamos el modificador static
+    private static let kHeight : CGFloat = 100.0
+    
     override func awakeFromNib()
     {
         super.awakeFromNib()
@@ -24,6 +28,11 @@ class ImageTableViewCell: UITableViewCell
     class func reuseIdentifier () -> String
     {
         return "ImageCell"
+    }
+    
+    class func preferredHeight () -> CGFloat
+    {
+        return kHeight
     }
 
 }

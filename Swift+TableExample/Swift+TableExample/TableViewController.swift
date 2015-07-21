@@ -52,7 +52,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         dataArray.append(ModelClass(titleString: "Federico", subTitleString: "MDP Office"))
         dataArray.append(ModelClass(titleString: "Nico", subTitleString: "MDP Office"))
         dataArray.append(ModelClass(titleString: "Gabo", subTitleString: nil))
-        dataArray.append(ModelClass(titleString: "Lucas", subTitleString: "MDPOffice"))
+        dataArray.append(ModelClass(titleString: "Lucas", subTitleString: "MDP Office"))
     }
     
     
@@ -66,17 +66,45 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return dataArray.count
+        // Para usar un switch combinado con un enum, hay que inicializar una var del enum con el rawValue que corresponda.
+        // Si el enum extiende de Int, el rawValue va a ser un valor entero.
+        // Es necesario unwrappear el resultado por si el Int que se pasa por parametro no puede inicializar in case del enum.
+        // El resultado sera un componente del enum, ej. SectionTag.One, el cual se puede abreviar en el case como .One
+
+        switch SectionTag (rawValue: section)!
+        {
+        case .One:
+            return 1
+            
+        case .Two:
+            return dataArray.count
+            
+        default:
+            return 0
+        }
+        
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        switch SectionTag (rawValue: indexPath.section)!
+        {
+        case .One:
+            return ImageTableViewCell.preferredHeight()
+            
+        case .Two:
+            return CustomTableViewCell.preferredHeight()
+            
+        default:
+            return 0
+        }
+
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         var cell : UITableViewCell!
         
-        // Para usar un switch combinado con un enum, hay que inicializar una var del enum con el rawValue que corresponda. 
-        // Si el enum extiende de Int, el rawValue va a ser un valor entero. 
-        // Es necesario unwrappear el resultado por si el Int que se pasa por parametro no puede inicializar in case del enum.
-        // El resultado sera un componente del enum, ej. SectionTag.One, el cual se puede abreviar en el case como .One.
         switch SectionTag (rawValue: indexPath.section)!
         {
         case .One:
@@ -87,6 +115,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             
         case .Two:
             var customCell : CustomTableViewCell = tableView.dequeueReusableCellWithIdentifier(CustomTableViewCell.reuseIdentifier(), forIndexPath: indexPath) as! CustomTableViewCell
+            customCell.configureCell(dataArray[indexPath.row].title, subTitle: dataArray[indexPath.row].subTitle)
             cell = customCell
             
         default:
