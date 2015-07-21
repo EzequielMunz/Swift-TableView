@@ -40,6 +40,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     private func configureNavigationBar ()
     {
         title = "Table Example"
+        navigationController?.navigationBar.barTintColor = UIColor.cyanColor()
     }
     
     private func initData ()
@@ -127,12 +128,17 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat
     {
+        // Esto nos ayuda a quitar los separators en las celdas vacias
         return CGFloat.min
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
+        let storyboard : UIStoryboard = UIStoryboard (name: "Main", bundle: NSBundle.mainBundle())
+        var viewController : DetailsViewController = storyboard.instantiateViewControllerWithIdentifier("DetailsViewController") as! DetailsViewController
         
+        viewController.data = dataArray[indexPath.row]
+        navigationController?.pushViewController(viewController, animated: true)
     }
 
 }

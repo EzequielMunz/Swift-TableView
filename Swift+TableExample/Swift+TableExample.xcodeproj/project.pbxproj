@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		371347931B5E6D2A001B37B4 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371347921B5E6D2A001B37B4 /* ImageTableViewCell.swift */; };
+		371347951B5EAC07001B37B4 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371347941B5EAC07001B37B4 /* DetailsViewController.swift */; };
 		377102791B5D7E1200DACB54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377102781B5D7E1200DACB54 /* AppDelegate.swift */; };
 		3771027E1B5D7E1200DACB54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3771027C1B5D7E1200DACB54 /* Main.storyboard */; };
 		377102801B5D7E1300DACB54 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3771027F1B5D7E1300DACB54 /* Images.xcassets */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		371347921B5E6D2A001B37B4 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
+		371347941B5EAC07001B37B4 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		377102731B5D7E1200DACB54 /* Swift+TableExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift+TableExample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		377102771B5D7E1200DACB54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		377102781B5D7E1200DACB54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				377102981B5D904D00DACB54 /* TableViewController.swift */,
 				371347921B5E6D2A001B37B4 /* ImageTableViewCell.swift */,
 				3771029A1B5D925600DACB54 /* CustomTableViewCell.swift */,
+				371347941B5EAC07001B37B4 /* DetailsViewController.swift */,
 				3771027C1B5D7E1200DACB54 /* Main.storyboard */,
 				3771027F1B5D7E1300DACB54 /* Images.xcassets */,
 				377102811B5D7E1300DACB54 /* LaunchScreen.xib */,
@@ -226,6 +229,7 @@
 				371347931B5E6D2A001B37B4 /* ImageTableViewCell.swift in Sources */,
 				3771029D1B5D967A00DACB54 /* ModelClass.swift in Sources */,
 				377102991B5D904D00DACB54 /* TableViewController.swift in Sources */,
+				371347951B5EAC07001B37B4 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

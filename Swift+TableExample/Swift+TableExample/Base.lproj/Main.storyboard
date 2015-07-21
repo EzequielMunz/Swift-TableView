@@ -114,5 +114,24 @@
             </objects>
             <point key="canvasLocation" x="-11.5" y="436.5"/>
         </scene>
+        <!--Details View Controller-->
+        <scene sceneID="ghh-xq-u5s">
+            <objects>
+                <viewController storyboardIdentifier="DetailsViewController" id="e2S-2g-x2Z" customClass="DetailsViewController" customModule="Swift_TableExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ntG-Hb-X0T"/>
+                        <viewControllerLayoutGuide type="bottom" id="psb-5A-bPr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NrK-6K-0xU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IoS-BV-K7E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="498.5" y="436.5"/>
+        </scene>
     </scenes>
 </document>
