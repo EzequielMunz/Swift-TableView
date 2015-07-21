@@ -22,7 +22,8 @@ class DetailsViewController: UIViewController
     
     private func configureNavigationBar ()
     {
-        title = data.title
+        displayNavigationTitle (data.title)
+        displayLeftArrow ()
     }
 
 }

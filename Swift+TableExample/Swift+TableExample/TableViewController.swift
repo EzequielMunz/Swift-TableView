@@ -35,11 +35,12 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         configureNavigationBar()
         initData()
         
+        tbl_dataTable.backgroundColor = UIColor(red: 0.8, green: 0.9, blue: 0.9, alpha: 1)
     }
     
     private func configureNavigationBar ()
     {
-        title = "Table Example"
+        displayNavigationTitle("SWIFT")
         navigationController?.navigationBar.barTintColor = UIColor.cyanColor()
     }
     
@@ -128,8 +129,9 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat
     {
-        // Esto nos ayuda a quitar los separators en las celdas vacias
-        return CGFloat.min
+        // Esto nos permite a quitar los separators en las celdas vacias
+        // 3 pixeles es el grosor default de los separadores, colocamos el footer como ultimo separador
+        return 3.0
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
