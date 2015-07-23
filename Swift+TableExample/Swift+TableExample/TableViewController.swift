@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
+class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ExampleProtocol
 {
     // Los enums pueden extender de Int para tener un valor entero de referencia
     // Cada componente dentro del enum se define con la palabra clave "case"
@@ -139,6 +139,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         let storyboard : UIStoryboard = UIStoryboard (name: "Main", bundle: NSBundle.mainBundle())
         var viewController : DetailsViewController = storyboard.instantiateViewControllerWithIdentifier("DetailsViewController") as! DetailsViewController
         
+        viewController.delegate = self
         viewController.data = dataArray[indexPath.row]
         
         //Ejemplo de block (closure) con weak self
@@ -160,6 +161,22 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
                         })
         
         
+    }
+    
+    // MARK: ExampleProtocol Methods
+    
+    func changedSubtitle(newText: String, data : ModelClass)
+    {
+        // El metodo find() nos permite obtener el indice de un objeto dentro del arreglo, si no lo encuentra, retorna nil,
+        // Por lo que debemos declararlo como optional
+        let index : Int? = find(dataArray, data)
+        
+        if let unwrappedIndex = index
+        {
+            data.subTitle = newText
+            dataArray[unwrappedIndex] = data
+        }
+        tbl_dataTable.reloadData()
     }
 
 }

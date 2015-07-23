@@ -125,9 +125,50 @@
                     <view key="view" contentMode="scaleToFill" id="NrK-6K-0xU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uov-wb-xbD">
+                                <rect key="frame" x="16" y="39" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eia-rU-TA9">
+                                <rect key="frame" x="16" y="214" width="343" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="rMx-xB-PJA"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonApplyPressed:" destination="e2S-2g-x2Z" eventType="touchUpInside" id="Xnk-ZL-TDu"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5pM-uR-9pe">
+                                <rect key="frame" x="73" y="114" width="229" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eia-rU-TA9" firstAttribute="leading" secondItem="NrK-6K-0xU" secondAttribute="leading" constant="16" id="Df6-o4-bt2"/>
+                            <constraint firstItem="uov-wb-xbD" firstAttribute="leading" secondItem="NrK-6K-0xU" secondAttribute="leading" constant="16" id="FSn-Ib-Did"/>
+                            <constraint firstAttribute="trailing" secondItem="eia-rU-TA9" secondAttribute="trailing" constant="16" id="Hhv-Zv-n81"/>
+                            <constraint firstItem="uov-wb-xbD" firstAttribute="top" secondItem="ntG-Hb-X0T" secondAttribute="bottom" constant="19" id="LQ6-01-LKF"/>
+                            <constraint firstAttribute="trailing" secondItem="uov-wb-xbD" secondAttribute="trailing" constant="16" id="MMa-6o-LcJ"/>
+                            <constraint firstItem="eia-rU-TA9" firstAttribute="top" secondItem="5pM-uR-9pe" secondAttribute="bottom" constant="70" id="UUV-B9-Thu"/>
+                            <constraint firstAttribute="trailing" secondItem="5pM-uR-9pe" secondAttribute="trailing" constant="73" id="anN-Ez-BqD"/>
+                            <constraint firstItem="5pM-uR-9pe" firstAttribute="top" secondItem="uov-wb-xbD" secondAttribute="bottom" constant="54" id="kwD-r2-hVR"/>
+                            <constraint firstItem="5pM-uR-9pe" firstAttribute="leading" secondItem="NrK-6K-0xU" secondAttribute="leading" constant="73" id="tyj-CB-kKd"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="btn_apply" destination="eia-rU-TA9" id="wUI-c1-Mp6"/>
+                        <outlet property="lbl_description" destination="uov-wb-xbD" id="cUi-p7-i6b"/>
+                        <outlet property="txf_inputText" destination="5pM-uR-9pe" id="LuE-Pq-tbq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IoS-BV-K7E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
