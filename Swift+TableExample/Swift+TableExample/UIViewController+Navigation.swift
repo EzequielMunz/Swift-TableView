@@ -25,6 +25,9 @@ extension UIViewController
     
     func goBack ()
     {
+        // El navigation controller es una propiedad optional dentro de un ViewController.
+        // Usando navigationController? nos aseguramos de que el metodo se llame solo si el navigation controller existe.
+        // Usar "?" detras de un optional, es preguntar si es distinto de nil.
         navigationController?.popViewControllerAnimated(true)
     }
 }
