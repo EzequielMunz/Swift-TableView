@@ -140,7 +140,41 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         var viewController : DetailsViewController = storyboard.instantiateViewControllerWithIdentifier("DetailsViewController") as! DetailsViewController
         
         viewController.data = dataArray[indexPath.row]
-        navigationController?.pushViewController(viewController, animated: true)
+        
+        //Ejemplo de block (closure) con weak self
+        //Se puede utilizar el modificador unowned en el caso en que se sabe que self no va a ser nil,
+        //en cuyo caso no hay que usar el ?
+        //Se utiliza weak cuando existe la posibilidad de que sea nil
+        
+        UIView.animateWithDuration(0.75,
+            animations: { [weak self] () -> () in
+                
+                        UIView.setAnimationCurve(UIViewAnimationCurve.EaseOut)
+                        var view : UIView? = self?.navigationController?.view
+                        if let auxView = view
+                        {
+                            UIView.setAnimationTransition(UIViewAnimationTransition.CurlDown, forView: auxView, cache: false)
+                        }
+                        self?.navigationController?.pushViewController(viewController, animated: false)
+                
+                        })
+        
+        
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
