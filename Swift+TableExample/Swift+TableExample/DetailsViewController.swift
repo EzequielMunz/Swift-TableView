@@ -49,7 +49,7 @@ class DetailsViewController: UIViewController
     
     // MARK: - Helper methods
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent)
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
     {
         resignFirstResponder()
     }
@@ -57,7 +57,7 @@ class DetailsViewController: UIViewController
     @IBAction func buttonApplyPressed (sender : AnyObject!)
     {
         // Agregar "?" al final de delegate, nos sirve para preguntar si el delegate es distinto de nil
-        delegate?.changedSubtitle(txf_inputText.text, data: data)
+        delegate?.changedSubtitle(txf_inputText.text!, data: data)
         navigationController?.popViewControllerAnimated(true)
     }
 

@@ -33,7 +33,7 @@ class CustomTableViewCell: UITableViewCell
         // if let nombre = optional es la forma de hacer unwrap. Si hay valor, se guarda en la let nueva, sino va al else.
         if let subTitleText = subTitle
         {
-            lbl_subTitle.text = subTitle
+            lbl_subTitle.text = subTitleText
         }
         else
         {

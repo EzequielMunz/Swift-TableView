@@ -4,10 +4,34 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Copy of WatchOS 2 Example.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Glance - WatchOS 2 Example.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Notification - WatchOS 2 Example.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>Swift+TableExample.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>WatchOS 2 Example.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -18,6 +42,16 @@
 			<true/>
 		</dict>
 		<key>377102871B5D7E1300DACB54</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>37DC05AD1B7BD45C001FCF6B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>37DC05B91B7BD45C001FCF6B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

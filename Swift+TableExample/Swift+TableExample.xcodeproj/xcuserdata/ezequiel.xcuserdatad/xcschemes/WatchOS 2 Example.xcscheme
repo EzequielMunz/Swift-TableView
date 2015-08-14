@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "37DC05AD1B7BD45C001FCF6B"
+               BuildableName = "WatchOS 2 Example.app"
+               BlueprintName = "WatchOS 2 Example"
+               ReferencedContainer = "container:Swift+TableExample.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "377102721B5D7E1200DACB54"
                BuildableName = "Swift+TableExample.app"
                BlueprintName = "Swift+TableExample"
@@ -23,14 +37,14 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "377102871B5D7E1300DACB54"
-               BuildableName = "Swift+TableExampleTests.xctest"
-               BlueprintName = "Swift+TableExampleTests"
+               BlueprintIdentifier = "37DC05B91B7BD45C001FCF6B"
+               BuildableName = "WatchOS 2 Example Extension.appex"
+               BlueprintName = "WatchOS 2 Example Extension"
                ReferencedContainer = "container:Swift+TableExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,23 +56,13 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "377102871B5D7E1300DACB54"
-               BuildableName = "Swift+TableExampleTests.xctest"
-               BlueprintName = "Swift+TableExampleTests"
-               ReferencedContainer = "container:Swift+TableExample.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "377102721B5D7E1200DACB54"
-            BuildableName = "Swift+TableExample.app"
-            BlueprintName = "Swift+TableExample"
+            BlueprintIdentifier = "37DC05AD1B7BD45C001FCF6B"
+            BuildableName = "WatchOS 2 Example.app"
+            BlueprintName = "WatchOS 2 Example"
             ReferencedContainer = "container:Swift+TableExample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -74,17 +78,29 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      allowLocationSimulation = "YES"
+      notificationPayloadFile = "WatchOS 2 Example Extension/PushNotificationPayload.apns">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.carousel"
+         RemotePath = "/Swift+TableExample">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "377102721B5D7E1200DACB54"
-            BuildableName = "Swift+TableExample.app"
-            BlueprintName = "Swift+TableExample"
+            BlueprintIdentifier = "37DC05AD1B7BD45C001FCF6B"
+            BuildableName = "WatchOS 2 Example.app"
+            BlueprintName = "WatchOS 2 Example"
             ReferencedContainer = "container:Swift+TableExample.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "37DC05AD1B7BD45C001FCF6B"
+            BuildableName = "WatchOS 2 Example.app"
+            BlueprintName = "WatchOS 2 Example"
+            ReferencedContainer = "container:Swift+TableExample.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -94,16 +110,27 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.carousel"
+         RemotePath = "/Swift+TableExample">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "377102721B5D7E1200DACB54"
-            BuildableName = "Swift+TableExample.app"
-            BlueprintName = "Swift+TableExample"
+            BlueprintIdentifier = "37DC05AD1B7BD45C001FCF6B"
+            BuildableName = "WatchOS 2 Example.app"
+            BlueprintName = "WatchOS 2 Example"
             ReferencedContainer = "container:Swift+TableExample.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "37DC05AD1B7BD45C001FCF6B"
+            BuildableName = "WatchOS 2 Example.app"
+            BlueprintName = "WatchOS 2 Example"
+            ReferencedContainer = "container:Swift+TableExample.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

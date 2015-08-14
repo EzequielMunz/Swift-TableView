@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import WatchConnectivity
 
-class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ExampleProtocol
+class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ExampleProtocol, WCSessionDelegate
 {
     // Los enums pueden extender de Int para tener un valor entero de referencia
     // Cada componente dentro del enum se define con la palabra clave "case"
@@ -36,6 +37,14 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         initData()
         
         tbl_dataTable.backgroundColor = UIColor(red: 0.8, green: 0.9, blue: 0.9, alpha: 1)
+        
+        // Set up the connection with the Apple Watch
+        if WCSession.isSupported()
+        {
+            let session = WCSession.defaultSession()
+            session.delegate = self
+            session.activateSession()
+        }
     }
     
     private func configureNavigationBar ()
@@ -55,6 +64,34 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         dataArray.append(ModelClass(titleString: "Nico", subTitleString: "MDP Office"))
         dataArray.append(ModelClass(titleString: "Gabo", subTitleString: nil))
         dataArray.append(ModelClass(titleString: "Lucas", subTitleString: "MDP Office"))
+        
+    }
+    
+    override func viewDidAppear(animated: Bool)
+    {
+        // Aca vamos a mandar el array al watch para actualizar la info en el mismo.
+        // Este es un ejemplo de Exception Handling de Swift 2
+        // Se usa un bloque do {} catch {}, donde en el do {} realizamos los llamados a metodos que pueden tirar excepciones
+        // El catch {} se encarga del manejo de esa excepcion.
+        // Se usa el modificador try en la linea donde se llama al metodo que puede tirar excepciones
+        do
+        {
+            let dataDic : [String:AnyObject] = ["Data" : dataArray]
+            print (WCSession.defaultSession().paired)
+            try WCSession.defaultSession().updateApplicationContext(dataDic)
+        }
+        catch
+        {
+            // El UIAlertView esta deprecado para iOS 9, y es reemplazado por el UIAlertController.
+            // Para que tenga la funcionalidad del UIAlertView, le seteamos el UIAlertControllerStyle.Alert
+            // Usamos el metodo "presentViewController" para mostrarlo
+            let alert : UIAlertController = UIAlertController (title: "Error", message: "Hubo un problema al enviar la informacion.", preferredStyle: UIAlertControllerStyle.Alert)
+            let okAction : UIAlertAction = UIAlertAction (title: "Ok", style: UIAlertActionStyle.Cancel, handler:{(action) in
+                print ("Presionaste Ok")
+            })
+            alert.addAction(okAction)
+            presentViewController(alert, animated: true, completion: nil)
+        }
     }
     
     
@@ -112,11 +149,11 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         case .One:
             // Si declaramos una variable como no optional, y queremos hacer un downcast a una clase especifica, es necesario unwrappear en el as, de la forma as!
             // Si esa variable la declaramos como optional, hacemos el downcast con as?. Esto nos dice que si no puede castear a la clase deseada, sera nil
-            var imageCell : ImageTableViewCell = tableView.dequeueReusableCellWithIdentifier(ImageTableViewCell.reuseIdentifier(), forIndexPath: indexPath) as! ImageTableViewCell
+            let imageCell : ImageTableViewCell = tableView.dequeueReusableCellWithIdentifier(ImageTableViewCell.reuseIdentifier(), forIndexPath: indexPath) as! ImageTableViewCell
             cell = imageCell
             
         case .Two:
-            var customCell : CustomTableViewCell = tableView.dequeueReusableCellWithIdentifier(CustomTableViewCell.reuseIdentifier(), forIndexPath: indexPath) as! CustomTableViewCell
+            let customCell : CustomTableViewCell = tableView.dequeueReusableCellWithIdentifier(CustomTableViewCell.reuseIdentifier(), forIndexPath: indexPath) as! CustomTableViewCell
             customCell.configureCell(dataArray[indexPath.row].title, subTitle: dataArray[indexPath.row].subTitle)
             cell = customCell
             
@@ -137,7 +174,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         let storyboard : UIStoryboard = UIStoryboard (name: "Main", bundle: NSBundle.mainBundle())
-        var viewController : DetailsViewController = storyboard.instantiateViewControllerWithIdentifier("DetailsViewController") as! DetailsViewController
+        let viewController : DetailsViewController = storyboard.instantiateViewControllerWithIdentifier("DetailsViewController") as! DetailsViewController
         
         viewController.delegate = self
         viewController.data = dataArray[indexPath.row]
@@ -151,7 +188,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             animations: { [weak self] () -> () in
                 
                         UIView.setAnimationCurve(UIViewAnimationCurve.EaseOut)
-                        var view : UIView? = self?.navigationController?.view
+                        let view : UIView? = self?.navigationController?.view
                         if let auxView = view
                         {
                             UIView.setAnimationTransition(UIViewAnimationTransition.CurlDown, forView: auxView, cache: false)
@@ -169,7 +206,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     {
         // El metodo find() nos permite obtener el indice de un objeto dentro del arreglo, si no lo encuentra, retorna nil,
         // Por lo que debemos declararlo como optional
-        let index : Int? = find(dataArray, data)
+        let index : Int? = dataArray.indexOf(data)
         
         if let unwrappedIndex = index
         {
